@@ -35,10 +35,7 @@ if (!(Test-Path $ExportFolder)) {
 
 
 # $TimeStamp = Get-Date -Format "yyyyMMdd_HHmmss"
-$TimeStamp = [System.TimeZoneInfo]::ConvertTime(
-    (Get-Date),
-    $JakartaTZ
-).ToString("yyyyMMdd_HHmmss")
+$TimeStamp = (Get-Date).ToUniversalTime().AddHours(7).ToString("yyyyMMdd_HHmmss")
 
 $FileName = "Attendance_Logs_$TimeStamp.csv"
 $ExportFile = Join-Path $ExportFolder $FileName
