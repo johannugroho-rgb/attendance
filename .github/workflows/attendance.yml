@@ -2,12 +2,11 @@ name: Microsoft 365 Attendance
 
 on:
   workflow_dispatch:
-
   push: 
-
+    branches: 
+      - main
   schedule:
-    #- cron: '0 0 * * *'   # 07:00 WIB (00:00 UTC)
-    - cron: '*/5 * * * *'
+       - cron: '*/5 * * * *'
 
 jobs:
   attendance:
